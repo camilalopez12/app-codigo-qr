@@ -1,0 +1,60 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <img src="assets/LOGO-AASISTENCIA.png"  alt="">
+    <ion-buttons slot="end">
+      DarkMode
+      <ion-toggle slot="end" [checked]="darkMode" (ionChange)="toggleDarkMode()"></ion-toggle>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Asistencia APP</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="form-login">
+
+<img src="assets/LOGO-AASISTENCIA.png" alt="" id="logo">
+    <div class="form-profesor" id="form-profesor">
+      <p>Ingreso Portal Asistencia</p>
+      <ion-input [(ngModel)]="l_correo" label="Correo" label-placement="floating" fill="solid" placeholder="Ingresa tu correo"></ion-input>
+      <br><br><br>
+      <ion-input [(ngModel)]="l_clave" label="Contraseña" label-placement="floating" fill="solid" placeholder="Ingresa tu contraseña"></ion-input>
+      <br><br>
+      <ion-button (click)="login()" expand="block">Iniciar Sesion</ion-button>
+    </div>
+
+    <div class="form-registro" id="form-registro">
+      <p>Registrate</p>
+      <ion-input [(ngModel)]="r_nombre" label="Nombre" label-placement="floating" fill="solid" placeholder="Ingresa tu Nombre"></ion-input>
+      <br><br><br>
+      <ion-input [(ngModel)]="r_correo" label="Correo" label-placement="floating" fill="solid" placeholder="Ingresa tu correo"></ion-input>
+      <br><br><br>
+      <ion-input [(ngModel)]="r_clave" label="Contraseña" label-placement="floating" fill="solid" placeholder="Ingresa tu contraseña"></ion-input>
+      <br><br><br>
+      <ion-select [(ngModel)]="r_tipo" label="Tipo de usuario" placeholder="Selecciona" fill="solid">
+        <ion-select-option value="1">Profesor</ion-select-option>
+        <ion-select-option value="2">Alumno</ion-select-option>
+      </ion-select>
+      <br><br>
+      <ion-button  expand="block" (click)="registrarse()">Registrarse</ion-button>
+    </div>
+
+
+    <div class="form-olvidado" id="form-olvidado">
+      <p>Recupera tu contraseña</p>
+      <ion-input [(ngModel)]="o_correo" label="Correo" label-placement="floating" fill="solid" placeholder="Ingresa tu correo"></ion-input>
+      <br><br><br>
+      <ion-button (click)="reset_clave()"  expand="block">Recuperar</ion-button>
+    </div>
+  </div>
+
+  <div class="extras">
+    <a href="javascript:void(0)" (click)="registro()">Registrarse</a><br>
+    <a href="javascript:void(0)" (click)="olvidado()">Olvide mi contraseña</a>
+  </div>
+
+</ion-content>

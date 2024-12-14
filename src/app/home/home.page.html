@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      <img src="assets/LOGO-AASISTENCIA.png"  alt="">
+    </ion-title>
+    <ion-buttons slot="end">
+      DarkMode
+      <ion-toggle slot="end" [checked]="darkMode" (ionChange)="toggleDarkMode()"></ion-toggle> | 
+      <ion-button [routerLink]="['/login']"><ion-icon name="log-out-outline"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Profesor</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <p>Fecha Hoy : {{ fechahoy }}</p>
+    <ion-button (click)="generarqr()" expand="block">Generar QR</ion-button>
+    <br>
+
+    <div id="qr" style="display:none;">
+      <qrcode [qrdata]="textoQr" [width]="256" ></qrcode>
+    </div>
+
+
+
+  </div>
+</ion-content>
